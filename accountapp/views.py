@@ -29,5 +29,5 @@ class AccountCreateView(CreateView):
     form_class = UserCreationForm
     # 완료가 되고 나서 어디로 돌아 갈 것인지 success_url
     success_url = reverse_lazy('accountapp:hello_world')
-    template_name = 'accountsapp/create.html'
+    template_name = 'accountapp/create.html'
 
