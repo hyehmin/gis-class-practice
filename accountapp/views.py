@@ -33,10 +33,12 @@ class AccountCreateView(CreateView):
     success_url = reverse_lazy('accountapp:hello_world')
     template_name = 'accountapp/create.html'
 
+
 class AccountDetailView(DetailView):
     model = User
     context_object_name = 'target_user'
     template_name = 'accountapp/detail.html'
+
 
 class AccountUpdateView(UpdateView):
     model = User
@@ -57,12 +59,13 @@ class AccountUpdateView(UpdateView):
         else:
             return HttpResponseForbidden()
 
+
 class AccountDeleteView(DeleteView):
     model = User
     context_object_name = 'target_user'
     success_url = reverse_lazy('accountapp:hello_world')
     template_name = 'accountapp/delete.html'
-    
+
     def get(self, request, *args, **kwargs):
         if request.user.is_authenticated and self.get_object() == request.user:
             return super().get(request, *args, **kwargs)
