@@ -21,6 +21,5 @@ from accountapp.views import AccountDetailView, AccountUpdateView
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('accountapp.urls')),
-    path('detail/<int:pk>', AccountDetailView.as_view(), name='detail'),
-    path('update/<int:pk>', AccountUpdateView.as_view(), name='update'),
+    path('profiles/', include('profileapp.urls')),
 ]
